@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 /**
  * Create a comic PDF from image paths
  */
-export async function createComicPDF(imagePaths: string[], dpi: number = 100): Promise<string | null> {
+export async function createComicPDF(imagePaths: string[], dpi: number = 100, filename?: string): Promise<string | null> {
   try {
     if (!imagePaths || imagePaths.length === 0) {
       throw new Error('No images provided for PDF creation');
@@ -56,8 +56,9 @@ export async function createComicPDF(imagePaths: string[], dpi: number = 100): P
     // Save the PDF
     const pdfBytes = await pdfDoc.save();
     
-    // Write to file
-    const outputPath = path.join(__dirname, '..', 'generated', 'comic_book.pdf');
+    // Use provided filename or default to comic_book.pdf
+    const pdfFilename = filename || 'comic_book.pdf';
+    const outputPath = path.join(__dirname, '..', 'generated', pdfFilename);
     await fs.writeFile(outputPath, pdfBytes);
 
     return outputPath;

@@ -31,8 +31,10 @@ app.use(cors({
   origin: [
     'http://localhost:3000', // Next.js default port
     'http://localhost:3001', // Backend port
+    'http://localhost:3002', // Next.js alternate port
     'http://127.0.0.1:3000', // IPv4 frontend
-    'http://127.0.0.1:3001'  // IPv4 backend
+    'http://127.0.0.1:3001', // IPv4 backend
+    'http://127.0.0.1:3002'  // IPv4 frontend alternate
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -43,6 +45,9 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Static file serving for generated images
 app.use('/images', express.static(path.join(__dirname, 'generated')));
+
+// Static file serving for library PDFs
+app.use('/library/pdfs', express.static(path.join(__dirname, 'library', 'pdfs')));
 
 // Apply rate limiting
 app.use('/api', apiLimiter);

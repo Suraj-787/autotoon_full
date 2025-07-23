@@ -1,0 +1,42 @@
+[
+  {
+    "id": "725b52c9-2fed-4a59-a40c-1244f555a637",
+    "title": "Steel Savior",
+    "story": "A brave robot saves a city from aliens",
+    "style": "sci-fi",
+    "scenes": [
+      "A brave robot saves a city from aliens."
+    ],
+    "styleGuide": "Okay, here is a visual style guide for generating sci-fi comic panels, focusing on visual elements ONLY, for a story about a brave robot saving a city from aliens.\n\n# Sci-Fi Comic Panel Visual Style Guide: Brave Robot\n\nThis guide outlines the visual standards for creating consistent and compelling comic panels.\n\n## 1. Character Visual Designs\n\n**Hero Robot (Unit 7):**\n\n*   **Appearance:** Sleek, angular design. Predominantly metallic silver with blue energy accents.  Exposed wiring is minimal but present as details. Head is a slightly recessed visor showing a blue energy core instead of eyes.\n    *   **Height:** Roughly 8ft tall.\n    *   **Proportions:** Heroic, slightly exaggerated shoulders.\n*   **Clothing/Armor:** Integrated plating, not separate garments. Strategic use of vents and cooling fins. Minimal external weaponry initially.\n*   **Distinctive Features:** A glowing blue energy core visible through a chest plate window. Shoulder-mounted mini-thrusters (used for short bursts of flight). A slightly battered, but well-maintained appearance suggesting combat experience.\n\n    ",
+    "prompts": [],
+    "images": [
+      "/images/scene_0.png"
+    ],
+    "pdfPath": "/library/pdfs/Steel-Savior-2f5268cb.pdf",
+    "pdfFilename": "Steel-Savior-2f5268cb.pdf",
+    "thumbnail": "/images/scene_0.png",
+    "createdAt": "2025-07-17T18:41:33.031Z",
+    "updatedAt": "2025-07-17T18:41:33.031Z",
+    "sessionId": "session_1752777644733_l5upp2434"
+  },
+  {
+    "id": "9a6a16ac-acdd-4ba3-b8be-51e8bac5143a",
+    "title": "Unicorn Portal Pop",
+    "story": "A magical unicorn discovers a hidden portal",
+    "style": "cartoon",
+    "scenes": [
+      "A magical unicorn discovers a hidden portal."
+    ],
+    "styleGuide": "Okay, here's a visual style guide for a cartoon-style comic about a magical unicorn discovering a hidden portal, focusing solely on visual elements and consistency.\n\n**Visual Style Guide: Cartoon Unicorn & Hidden Portal**\n\n**1. Character Visual Designs: The Unicorn**\n\n*   **Appearance:**\n    *   *Body Shape:* Rounded, slightly chubby. Proportions: Oversized head, short, sturdy legs. Think cute, not sleek.\n    *   *Coloration:* Predominantly white.\n    *   *Mane & Tail:* Long, flowing, rainbow-colored.  Each color should be clearly defined and vibrant. Gradient acceptable, but avoid muddying colors.\n    *   *Eyes:* Large, round, with oversized pupils.  Sparkle/glimmer highlights are essential.\n    *   *Horn:* Spiraled, iridescent (subtle color shifting), smooth texture.  Not overly sharp. Should glow faintly.\n    *   *Hooves:* Small, dark gray or black, slightly cartoonishly exaggerated.\n    *   *Nose/Muzzle:* Small, rounded.\n*   **Clothing/Accessories:**\n    *   None, other than maybe a very simple, non-distracting flower crown or a small, decorative horseshoe charm subtly visible on a leg. Keep it minimal.\n*   **Distinctive Features:**\n    *   Horn glow (variable intensity depending on mood/magic usage).\n    *   Always a slight, innocent/curious expression.\n    *   Rainbow mane/tail as defining characteristic.\n    *   Subtle sparkle/glitter effect on mane/tail or around body in some panels.\n\n**Image:** Unicorn Concept Art - Front & Side Views. Depict the points above: rounded body, rainbow mane/tail, glowing horn, big eyes.\n\n**2. Environment and Setting Details:**\n\n*   **General Aesthetic:** Lush, whimsical, slightly surreal. Think Studio Ghibli meets classic Disney.\n*   **Locations:**\n    *   *Forest:* Tall, stylized trees with slightly bent shapes.  Overgrown with colorful, non-realistic plants and flowers.  Mushrooms of various sizes and shapes (some glowing).\n    *   *Meadow:* Rolling hills, filled with wildflowers. Butterflies and fireflies are common.\n    *   *Portal Area:*  Secluded clearing, overgrown with vines and moss. The portal itself is nestled within a naturally formed rock archway.\n*   **Background Details:**\n    *   Layers of overlapping foliage create depth.\n    *   Stylized clouds and slightly exaggerated sunsets/sunrises.\n    *   Small, decorative elements like sparkling dewdrops on leaves.\n\n**Image:** Sample Backgrounds - Forest, Meadow, and Portal Area (clearing with archway).\n\n**3. Key Objects and Props:**\n\n*   **Portal:**\n    *   *Shape:* Roughly circular/oval, swirling energy contained within the rock archway.\n    *   *Energy:*  Visible, swirling patterns. Color palette from the \"Portal Energy\" section below.\n    *   *Texture:* Smooth, shimmering.\n*   **Flowers:**\n    *   Variety of shapes and colors.  Exaggerated petals and stems.\n    *   Some flowers may have glowing properties.\n*   **Mushrooms:**\n    *   Various sizes and shapes, some with spots or stripes.\n    *   Some glow.\n*   **Rock Archway:**\n    *   Natural, weathered rock. Covered in moss and vines. The portal forms within it.\n\n**Image:** Portal Design, Flower Examples, Mushroom Examples, Rock Archway\n\n**4. Color Palette Recommendations:**\n\n*   **Overall:** Bright, saturated colors. Use of complementary colors to create visual interest.\n*   **Forest:** Greens (various shades), browns, hints of blue and purple in shadows.\n*   **Meadow:** Greens, yellows, pinks, purples, oranges.\n*   **Unicorn:** Predominantly white with rainbow hues in mane and tail.\n*   **Portal Energy:** Teal, purple, pink, and white. Swirling, shifting gradients.  Emphasis on glowing effects.\n\n**Image:** Color Swatches - Forest, Meadow, Unicorn, Portal Energy\n\n**5. Art Style Description:**\n\n*   **Line Work:**\n    *   Thick, bold outlines. Lines are clean and crisp.\n    *   Varied line weight to emphasize important details.\n*   **Shading:**\n    *   Cel-shading (flat, distinct areas of light and shadow).\n    *   Simple gradients for subtle depth.\n    *   Avoid overly realistic or complex shading.\n*   **Overall Aesthetic:**\n    *   Classic cartoon style.  Exaggerated features and expressions.\n    *   Emphasis on cuteness and whimsy.\n    *   Simplified shapes and forms.\n\n**Image:** Panel sample using all art style descriptions\n\n**6. Lighting and Atmosphere Guidelines:**\n\n*   **General:** Warm and inviting.\n*   **Daytime:** Bright sunlight, soft shadows.  Dappled light filtering through trees in the forest.\n*   **Portal Area:**  A subtle, otherworldly glow emanating from the portal.\n*   **Emphasis:** Use of light and shadow to draw attention to key elements, like the unicorn or the portal.\n\n**Image:** Lighting Examples - Forest (daytime), Portal Area (glowing).\n\n**7. Character Consistency Notes:**\n\n*   **Proportions:** Maintain consistent body proportions for the unicorn across all panels. Pay special attention to head size and leg length.\n*   **Facial Features:** The unicorn's facial expression should always be somewhat innocent and curious. Avoid drastic changes in expression that deviate from this.\n*   **Mane & Tail:** The color order and overall shape of the rainbow mane and tail should remain consistent.\n*   **Horn:** The spiral pattern and subtle glow of the horn are important details to maintain.\n*   **Coloration:** Maintain a consistent white color for the unicorn's body, and ensure the rainbow colors in the mane and tail are vibrant and consistent.\n\n**Image:** Unicorn Consistency Sheet - Different poses, showing consistent features.\n",
+    "prompts": [],
+    "images": [
+      "/images/scene_0.png"
+    ],
+    "pdfPath": "/library/pdfs/Unicorn-Portal-Pop-9622b323.pdf",
+    "pdfFilename": "Unicorn-Portal-Pop-9622b323.pdf",
+    "thumbnail": "/images/scene_0.png",
+    "createdAt": "2025-07-17T18:20:19.136Z",
+    "updatedAt": "2025-07-17T18:20:19.136Z",
+    "sessionId": "session_1752776299664_paajva31q"
+  }
+]

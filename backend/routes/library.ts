@@ -72,6 +72,10 @@ interface SaveComicRequest {
 router.get('/', async (req: express.Request, res: express.Response) => {
   try {
     const library = await getLibraryIndex();
+    // Prevent caching issues
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
     res.json({
       comics: library,
       success: true
@@ -239,27 +243,45 @@ router.put('/:id', async (req: express.Request, res: express.Response) => {
 router.delete('/:id', async (req: express.Request, res: express.Response) => {
   try {
     const { id } = req.params;
-    const comicDataPath = path.join(LIBRARY_DIR, `${id}.json`);
-
-    try {
-      // Remove comic data file
-      await fs.unlink(comicDataPath);
-
-      // Update library index
-      const library = await getLibraryIndex();
-      const filteredLibrary = library.filter(item => item.id !== id);
-      await saveLibraryIndex(filteredLibrary);
-
-      res.json({
-        success: true,
-        message: 'Comic deleted successfully'
-      });
-    } catch {
-      res.status(404).json({
+    
+    // Get library to find the comic
+    const library = await getLibraryIndex();
+    const comic = library.find(item => item.id === id);
+    
+    if (!comic) {
+      return res.status(404).json({
         success: false,
         message: 'Comic not found'
       });
     }
+
+    // Delete PDF file if it exists
+    if (comic.pdfFilename) {
+      const pdfPath = path.join(__dirname, '..', 'library', 'pdfs', comic.pdfFilename);
+      try {
+        await fs.unlink(pdfPath);
+        console.log(`🗑️ Deleted PDF: ${comic.pdfFilename}`);
+      } catch (error) {
+        console.warn(`Warning: Could not delete PDF file ${comic.pdfFilename}:`, error);
+      }
+    }
+
+    // Delete comic data file
+    const comicDataPath = path.join(LIBRARY_DIR, `${id}.json`);
+    try {
+      await fs.unlink(comicDataPath);
+    } catch (error) {
+      console.warn(`Warning: Could not delete comic data file ${id}.json:`, error);
+    }
+
+    // Update library index
+    const filteredLibrary = library.filter(item => item.id !== id);
+    await saveLibraryIndex(filteredLibrary);
+
+    res.json({
+      success: true,
+      message: 'Comic deleted successfully'
+    });
   } catch (error) {
     console.error('Error deleting comic:', error);
     res.status(500).json({

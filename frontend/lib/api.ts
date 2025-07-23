@@ -5,6 +5,9 @@ import axios from "axios"
 // API Configuration
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:3001"
 
+// Export for use in other components
+export { API_BASE_URL }
+
 const api = axios.create({
   baseURL: API_BASE_URL,
   timeout: 600000, // 10 minutes timeout for image generation
@@ -457,6 +460,7 @@ export const exportComic = async (sessionId?: string): Promise<Blob> => {
 export const getLibrary = async (): Promise<LibraryItem[]> => {
   try {
     const response = await api.get("/api/library");
+    console.log('🔗 API response:', response.data);
     return response.data.comics || [];
   } catch (error) {
     console.error("Get library error:", error);

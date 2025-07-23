@@ -41,6 +41,47 @@ export async function generateText(client: GeminiClient, prompt: string | string
   }
 }
 
+export async function generateComicTitle(client: GeminiClient, story: string, style: string): Promise<string> {
+  try {
+    const prompt = `Generate a unique, catchy title for a comic book based on this story and style:
+
+Story: ${story.substring(0, 500)}...
+Style: ${style}
+
+Requirements:
+- Title should be 2-6 words maximum
+- Should capture the essence of the story
+- Should be unique and memorable
+- No special characters or punctuation except hyphens
+- Format: "Title Words Here"
+
+Just return the title, nothing else.`;
+
+    const response = await client.ai.models.generateContent({
+      model: client.textModel,
+      contents: prompt
+    });
+    
+    const title = response.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+    
+    // Clean up the title - remove quotes and extra whitespace
+    const cleanTitle = title.replace(/['"]/g, '').trim();
+    
+    // If no title generated, create a fallback
+    if (!cleanTitle) {
+      const timestamp = new Date().toISOString().slice(0, 16).replace(/[:-]/g, '');
+      return `Comic-${timestamp}`;
+    }
+    
+    return cleanTitle;
+  } catch (error) {
+    console.error('Error generating comic title:', error);
+    // Fallback title with timestamp
+    const timestamp = new Date().toISOString().slice(0, 16).replace(/[:-]/g, '');
+    return `Comic-${timestamp}`;
+  }
+}
+
 export async function generateImage(client: GeminiClient, prompt: string): Promise<{ data: string; mimeType: string } | null> {
   try {
     // Add timeout to prevent hanging requests
