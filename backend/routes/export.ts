@@ -78,18 +78,34 @@ router.post('/', async (req: express.Request<{}, any, ExportRequest>, res: expre
       sessionData = sessions.get(sessionId);
       if (sessionData && sessionData.imagePaths) {
         imagePaths = sessionData.imagePaths;
+        console.log(`📁 Found ${imagePaths.length} image paths in session:`, imagePaths);
+        
+        // Verify that the image files actually exist
+        const existingPaths: string[] = [];
+        for (const imagePath of imagePaths) {
+          try {
+            await fs.promises.access(imagePath);
+            existingPaths.push(imagePath);
+          } catch (error) {
+            console.warn(`⚠️ Image file not found: ${imagePath}`);
+          }
+        }
+        imagePaths = existingPaths;
+        console.log(`✅ Verified ${imagePaths.length} existing image files`);
       }
     }
 
-    // If no image paths from session, get all generated images
+    // If no image paths from session or files don't exist, get all generated images
     if (imagePaths.length === 0) {
+      console.log('🔍 No valid session images, checking generated directory...');
       imagePaths = await getGeneratedImagePaths();
+      console.log(`📁 Found ${imagePaths.length} images in generated directory`);
     }
 
     if (imagePaths.length === 0) {
       return res.status(400).json({
         success: false,
-        message: 'No images available to create PDF'
+        message: 'No images available to create PDF. Please generate some images first.'
       });
     }
 
@@ -117,12 +133,26 @@ router.post('/', async (req: express.Request<{}, any, ExportRequest>, res: expre
     const pdfFilename = `${safeTitle}-${uniqueId}.pdf`;
 
     // Create PDF with dynamic filename
+    console.log(`📄 Creating PDF with ${imagePaths.length} images...`);
     const pdfPath = await createComicPDF(imagePaths, dpi, pdfFilename);
 
     if (!pdfPath) {
+      console.error('❌ PDF creation failed - createComicPDF returned null/undefined');
       return res.status(500).json({
         success: false,
-        message: 'Failed to create PDF'
+        message: 'Failed to create PDF - PDF generation returned no output'
+      });
+    }
+
+    // Verify PDF file exists
+    try {
+      await fs.promises.access(pdfPath);
+      console.log(`✅ PDF created successfully: ${pdfPath}`);
+    } catch (error) {
+      console.error('❌ PDF file does not exist after creation:', error);
+      return res.status(500).json({
+        success: false,
+        message: 'PDF was created but file is not accessible'
       });
     }
 
