@@ -34,7 +34,9 @@ app.use(cors({
     'http://localhost:3002', // Next.js alternate port
     'http://127.0.0.1:3000', // IPv4 frontend
     'http://127.0.0.1:3001', // IPv4 backend
-    'http://127.0.0.1:3002'  // IPv4 frontend alternate
+    'http://127.0.0.1:3002', // IPv4 frontend alternate
+    'https://autotoon-full.vercel.app', // Production frontend
+    'https://autotoon-full-*.vercel.app' // Preview deployments
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
